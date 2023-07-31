@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - yum update -y
+
+  build:
+    commands:
+      - mvn clean install package
+
+artifacts:
+  files:
+    - 'webapp/target/*.war'
